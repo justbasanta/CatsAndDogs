@@ -1,0 +1,16 @@
+#main-wrapper{
+	position: relative;
+	width: 600px;
+	height: 400px;
+	background-color: black;
+	margin: 0 auto;
+}
+
+.wall{
+	position: absolute;
+	height: 100px;
+	width: 25px;
+	bottom: 0px;
+	left: 113px;
+	background-color: brown;
+}
