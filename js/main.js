@@ -84,31 +84,50 @@ class MainGame {
 		}
 		// console.log(this.gameScreen);
 
-		this.gameScreen.$elem.onclick = (e) =>{
-			console.log(e + "  value of e")
-			this.arrow.findPosition(this.getActivePlayer());
+		// this.gameScreen.$elem.onclick = (e) =>{
+		// 	console.log(e + "  value of e")
+		// 	this.arrow.findPosition(this.getActivePlayer());
+		// 	this.arrow.drawArrow();
+		// 	this.id = setInterval(() =>{
+		// 		console.log("ROTATING");
+		// 		this.thetaValue = this.arrow.moveArrow(this.getActivePlayer());
+		// 		// console.log(this.thetaValue + "theta value");
+		// 	},100);
+
+		// 	this.gameScreen.$elem.onclick = null;
+		
+			// this.gameScreen.$elem.onmousedown = (e) => {
+			// 	console.log("clicked mouse!!!");
+			// 	clearInterval(this.id);
+			// 	// console.log(this.thetaValue + "------------<<<<<>>>>>>>--------");
+			// 	this.throwArrowAnimation(this.thetaValue, this.getActivePlayer());
+
+			// 	// this.gameScreen.$elem.onmousedown = null;
+			// }
+		// }
+		
+	// this.arrow.throwArrow(this.currentThetaValue,this.getActivePlayer());
+
+	} // end of init()
+
+	clickHandle(){
+		console.log(this.getActivePlayer());
+		this.arrow.findPosition(this.getActivePlayer());
 			this.arrow.drawArrow();
 			this.id = setInterval(() =>{
 				console.log("ROTATING");
 				this.thetaValue = this.arrow.moveArrow(this.getActivePlayer());
 				// console.log(this.thetaValue + "theta value");
 			},100);
-
-			this.gameScreen.$elem.onclick = null;
-		
-			this.gameScreen.$elem.onmousedown = (e) => {
-				console.log("clicked mouse!!!");
-				clearInterval(this.id);
-				// console.log(this.thetaValue + "------------<<<<<>>>>>>>--------");
-				this.throwArrowAnimation(this.thetaValue, this.getActivePlayer());
-			
-				// this.gameScreen.$elem.onmousedown = null;
-			}
-		}
-		
-	// this.arrow.throwArrow(this.currentThetaValue,this.getActivePlayer());
-
-	} // end of init()
+		document.getElementById('gamescreen').setAttribute("onclick","mainGame.mousedownHandle()");
+	}
+	mousedownHandle(){
+		console.log("clicked mouse!!!");
+		clearInterval(this.id);
+		// console.log(this.thetaValue + "------------<<<<<>>>>>>>--------");
+		this.throwArrowAnimation(this.thetaValue, this.getActivePlayer());
+		document.getElementById('gamescreen').setAttribute("onclick","mainGame.clickHandle()");
+	}
 
 	startHomeScreen() {
 		this.homeScreen.showHomeScreen();

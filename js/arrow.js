@@ -119,7 +119,8 @@ animateArrow(x,y,angle,vx,vy,player){
 	console.log(max_height);
 	// console.log(this);
 	this.run = setInterval(() =>{
-
+		console.log(player);
+		console.log(player.$elem.id);
 		if (player.$elem.id === 'player1') {
 			console.log("------throwArrowAnimation in progress----");
 				this.t += 1;
@@ -166,33 +167,14 @@ animateArrow(x,y,angle,vx,vy,player){
 
 collisonWithWall(x,y,player){	
 	if (player.$elem.id === 'player1') {
+		let player2 = mainGame.player2;
 		if (((x + this.width) > WALL_LEFT) && y <= WALL_TOP && !((x+this.width) > WALL_RIGHT)) {
 			this.$elem.remove();
 			// console.log(this);
 			clearInterval(this.run);
 			player.status= false;
 			player2.status=true;
-
-
-		// mainGame.gameScreen.$elem.onclick = (e) =>{
-		// 	console.log(e + "  value of e")
-		// 	mainGame.arrow.findPosition(mainGame.getActivePlayer());
-		// 	mainGame.arrow.drawArrow();
-		// 	this.id = setInterval(() =>{
-		// 		console.log("ROTATING");
-		// 		mainGame.thetaValue = mainGame.arrow.moveArrow(mainGame.getActivePlayer());
-		// 		// console.log(this.thetaValue + "theta value");
-		// 	},100);
-		// 	mainGame.gameScreen.$elem.onclick = null;
-		
-
-		// 	mainGame.gameScreen.$elem.onmousedown = (e) => {
-		// 		console.log("clicked mouse!!!");
-		// 		clearInterval(this.id);
-		// 		// console.log(this.thetaValue + "------------<<<<<>>>>>>>--------");
-		// 		mainGame.throwArrowAnimation(mainGame.thetaValue, mainGame.getActivePlayer());
-		// 		mainGame.gameScreen.$elem.onmousedown = null;
-		// 	}
+			// let arrowObj = new Arrow;
 		}
 
 			// mainGame.gameScreen.$elem.onclick(e);
@@ -200,11 +182,13 @@ collisonWithWall(x,y,player){
 		}
 
 	else{
+		let player1 = mainGame.player1;
 		if (x < WALL_RIGHT && y<=WALL_TOP && !(x < WALL_LEFT)) {
 			this.$elem.remove();
 			clearInterval(this.run);
 			player.status= false;
 			player1.status=true;
+			// let arrowObj = new Arrow;
 			console.log("Collided With Wall by Player 2");
 		}
 	}
@@ -213,16 +197,19 @@ collisonWithWall(x,y,player){
 
 collisonWithContainer(x,y,player){
 	if (player.$elem.id === 'player1') {
+		let player2 = mainGame.player2;
 		if ((x + this.width) > CONTAINER_RIGHT || y < CONTAINER_BOTTOM || (y + 20) > CONTAINER_TOP) {
 			this.$elem.remove();	
 			player.status= false;
 			player2.status=true;
 			mainGame.gameScreen.$elem.onclick;
+			// let arrowObj = new Arrow;
 			console.log("Collided with container by player 1");
 			clearInterval(this.run);
 		}
 	}
 	else{
+		let player1 = mainGame.player1;
 		if (x  < CONTAINER_LEFT || y < CONTAINER_BOTTOM || (y + 20) > CONTAINER_TOP) {
 			this.$elem.remove();	
 			player.status= false;
