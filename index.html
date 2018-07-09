@@ -6,15 +6,21 @@
 </head>
 <body>
 	<div class="main-wrapper" id="main-wrapper">
-		<div class="player1" id="player1"></div>
-		<div class="player2" id="player2"></div>
-		<div class="wall" id="wall"></div>
-		<button id="button">Start</button>
+	<div class="homescreen" id="homescreen">
+		<button id="button">Let's Shoot</button>
 	</div>
-
-	<script type="text/javascript" src="./js/main.js"></script>
+	<div class="gamescreen" id="gamescreen" onclick="mainGame.clickHandle()">
+		<div class="wall" id="wall"></div>
+	</div>
+		
+		<div class="gameoverscreen" id="gameoverscreen"></div>
+	</div>
+	<script type="text/javascript" src="./js/homescreen.js"></script>
+	<script type="text/javascript" src="./js/gamescreen.js"></script>
 	<script type="text/javascript" src="./js/player.js"></script>
-	<script type="text/javascript" src="./js/frame.js"></script>
 	<script type="text/javascript" src="./js/arrow.js"></script>
+	<script type="text/javascript" src="./js/gameoverscreen.js"></script>
+	<script type="text/javascript" src="./js/main.js"></script>
+
 </body>
 </html>

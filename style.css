@@ -2,7 +2,42 @@
 	position: relative;
 	width: 600px;
 	height: 400px;
-	background-color: black;
+	background-color: white;
+	border-bottom: 5px solid gray;
+	/*border-left: 3px solid gray;*/
+	border-right: 3px solid gray;
+	margin: 0 auto;
+}
+
+.homescreen{
+	background-image: url('./images/background.jpg');
+	height: 400px;
+	width: 600px;
+	margin: 0 auto;
+}
+#button{
+	position: absolute;
+	left: 40%;
+	top: 50%;
+	padding: 15px;
+	font-size: 20px;
+	border-radius: 10px;
+	background-color: white;
+	color: #666;
+}
+
+#button:hover{
+	color: #000;
+}
+
+.gamescreen{
+	position: absolute;
+	width: 600px;
+	height: 400px;
+	background-color: #eef;
+	border-bottom: 5px solid gray;
+	border-left: 3px solid gray;
+	border-right: 3px solid gray;
 	margin: 0 auto;
 }
 
@@ -11,6 +46,28 @@
 	height: 100px;
 	width: 25px;
 	bottom: 0px;
-	left: 113px;
-	background-color: brown;
+	left: 288px;
+	background-image: url('./images/wall.png');
+	border-radius: 2px;
+}
+.player{
+	position: absolute;
+	/*background-color: red;*/
+	/*z-index: 10;*/
+}
+#player1{
+	background-image: url('./images/player1.png');
+	background-repeat: no-repeat;
+}
+
+#player2{
+	background-image: url('./images/player2.png');
+	background-repeat: no-repeat;
+}
+.arrow{
+	position: absolute;
+	background-image: url('./images/arrow.png');
+	background-repeat: no-repeat;
+	/*border: 1px solid black;*/
+	display: none;
 }
